@@ -1,15 +1,15 @@
+# Backendrepo
+
 ## Overview
-This repository contains the backend APIs for a blog website, built using Django and Django Rest Framework (DRF). The backend is responsible for handling user authentication, blog management, comments, likes, bookmarks, and category filtering. The project is hosted on **AWS Free Tier** and can be accessed via the following API endpoint:
+This repository contains the backend APIs for a blog website, built using Django and Django Rest Framework (DRF). The backend is responsible for handling user authentication, blog management, comments, and categories. The project is hosted on **AWS Free Tier** and can be accessed via the following API endpoint:
 
 🔗 **Live API URL:** [http://54.252.157.69/api/](http://54.252.157.69/api/)
 
 ## Features
 - **User Authentication** (Register, Login, JWT Token-based Authentication)
-- **Blog Management** (Read)
+- **Post Management** (Create, Read, Update, Delete Posts)
 - **Categories & Filtering**
-- **User Comments on Blogs**
-- **Like & Blogs**
-- **Pagination & Sorting**
+- **User Comments on Posts**
 - **Secure API Endpoints with Permissions**
 
 ## Tech Stack
@@ -55,16 +55,11 @@ API will be available at: [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api
 ## API Endpoints
 | Endpoint | Method | Description |
 |----------|--------|-------------|
-| `/api/auth/register/` | POST | Register a new user |
-| `/api/auth/login/` | POST | Login and get JWT token |
-| `/api/blogs/` | GET | Get all blogs |
-| `/api/blogs/<id>/` | GET | Get a single blog |
-| `/api/blogs/create/` | POST | Create a new blog (Authenticated) |
-| `/api/blogs/<id>/update/` | PUT | Update a blog (Authenticated) |
-| `/api/blogs/<id>/delete/` | DELETE | Delete a blog (Authenticated) |
-| `/api/blogs/<id>/like/` | POST | Like a blog (Authenticated) |
-| `/api/blogs/<id>/bookmark/` | POST | Bookmark a blog (Authenticated) |
-| `/api/comments/` | POST | Add a comment (Authenticated) |
+| `/api/posts/` | GET | Get all posts |
+| `/api/posts/<id>/` | GET | Get a single post |
+| `/api/comments/` | GET, POST | Get all comments / Add a comment (Authenticated) |
+| `/api/user-profile/` | GET | Get user profile |
+| `/api/categories/` | GET | Get all categories |
 
 ## Deployment on AWS
 This project is deployed on **AWS Free Tier** using **EC2** and **Gunicorn** with **NGINX** as a reverse proxy. If you want to deploy a similar setup, follow these steps:
@@ -87,5 +82,4 @@ This project is licensed under the **MIT License**.
 
 📌 **Maintainer:** Vikas Bansode  
 📧 **Email:** vikasbansode804@gmail.com
-
 
